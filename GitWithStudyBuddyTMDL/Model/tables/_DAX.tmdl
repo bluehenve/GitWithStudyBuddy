@@ -1,6 +1,10 @@
 ﻿table _DAX
 	lineageTag: 3dc22f7a-ecb9-49d2-895f-c034fd23a157
 
+	measure #Movies = COUNTROWS ( IMDB )
+		formatString = 0
+		lineageTag: b3a0a8cb-0a90-4884-bfd3-303e4537ba36
+
 	column Value
 		dataType: Int64
 		isHidden
