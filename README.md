@@ -1,3 +1,3 @@
-# GitWithStuddyBuddy
+# GitWithStudyBuddy
 
 learning ...
