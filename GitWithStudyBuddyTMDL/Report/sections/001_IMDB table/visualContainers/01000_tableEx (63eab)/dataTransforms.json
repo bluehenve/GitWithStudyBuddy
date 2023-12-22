@@ -1,0 +1,180 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Title",
+        "Name": "IMDB.Title",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Rating",
+        "Name": "IMDB.Rating",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Votes",
+        "Name": "IMDB.Votes",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Duration",
+        "Name": "IMDB.Duration",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Age",
+        "Name": "IMDB.Age",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 3,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 4,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Title",
+      "queryName": "IMDB.Title",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "IMDB"
+            }
+          },
+          "Property": "Title"
+        }
+      }
+    },
+    {
+      "displayName": "Rating",
+      "queryName": "IMDB.Rating",
+      "roles": {
+        "Values": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "IMDB"
+            }
+          },
+          "Property": "Rating"
+        }
+      }
+    },
+    {
+      "displayName": "Votes",
+      "queryName": "IMDB.Votes",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "IMDB"
+            }
+          },
+          "Property": "Votes"
+        }
+      }
+    },
+    {
+      "displayName": "Duration",
+      "queryName": "IMDB.Duration",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "IMDB"
+            }
+          },
+          "Property": "Duration"
+        }
+      }
+    },
+    {
+      "displayName": "Age",
+      "queryName": "IMDB.Age",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "IMDB"
+            }
+          },
+          "Property": "Age"
+        }
+      }
+    }
+  ]
+}

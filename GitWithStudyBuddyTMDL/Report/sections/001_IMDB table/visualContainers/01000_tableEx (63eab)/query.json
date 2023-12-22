@@ -1,0 +1,121 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "i",
+              "Entity": "IMDB",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "i"
+                  }
+                },
+                "Property": "Title"
+              },
+              "Name": "IMDB.Title",
+              "NativeReferenceName": "Title"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "i"
+                  }
+                },
+                "Property": "Rating"
+              },
+              "Name": "IMDB.Rating",
+              "NativeReferenceName": "Rating"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "i"
+                  }
+                },
+                "Property": "Votes"
+              },
+              "Name": "IMDB.Votes",
+              "NativeReferenceName": "Votes"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "i"
+                  }
+                },
+                "Property": "Duration"
+              },
+              "Name": "IMDB.Duration",
+              "NativeReferenceName": "Duration"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "i"
+                  }
+                },
+                "Property": "Age"
+              },
+              "Name": "IMDB.Age",
+              "NativeReferenceName": "Age"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "i"
+                    }
+                  },
+                  "Property": "Rating"
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "Subtotal": 1
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 500
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

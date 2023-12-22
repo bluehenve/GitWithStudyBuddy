@@ -1,0 +1,42 @@
+{
+  "version": "5.49",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY23SU11",
+      "version": "5.50",
+      "type": 2
+    },
+    "customTheme": {
+      "name": "hv6869814924713726.json",
+      "version": "5.50",
+      "type": 1
+    }
+  },
+  "activeSectionIndex": 1,
+  "defaultDrillFilterOtherVisuals": true,
+  "linguisticSchemaSyncVersion": 2,
+  "settings": {
+    "useNewFilterPaneExperience": true,
+    "allowChangeFilterTypes": true,
+    "useStylableVisualContainerHeader": true,
+    "queryLimitOption": 6,
+    "useEnhancedTooltips": true,
+    "exportDataMode": 1,
+    "useDefaultAggregateDisplayName": true
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

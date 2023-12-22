@@ -1,0 +1,126 @@
+{
+  "name": "63eab1f1c43090b000e0",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 270.10962241169307,
+        "y": 197.32034104750306,
+        "z": 0,
+        "width": 705.96833130328866,
+        "height": 326.23629719853841,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "tableEx",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "IMDB.Title"
+        },
+        {
+          "queryRef": "IMDB.Rating"
+        },
+        {
+          "queryRef": "IMDB.Votes"
+        },
+        {
+          "queryRef": "IMDB.Duration"
+        },
+        {
+          "queryRef": "IMDB.Age"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "i",
+          "Entity": "IMDB",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "i"
+              }
+            },
+            "Property": "Title"
+          },
+          "Name": "IMDB.Title",
+          "NativeReferenceName": "Title"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "i"
+              }
+            },
+            "Property": "Rating"
+          },
+          "Name": "IMDB.Rating",
+          "NativeReferenceName": "Rating"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "i"
+              }
+            },
+            "Property": "Votes"
+          },
+          "Name": "IMDB.Votes",
+          "NativeReferenceName": "Votes"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "i"
+              }
+            },
+            "Property": "Duration"
+          },
+          "Name": "IMDB.Duration",
+          "NativeReferenceName": "Duration"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "i"
+              }
+            },
+            "Property": "Age"
+          },
+          "Name": "IMDB.Age",
+          "NativeReferenceName": "Age"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "i"
+                }
+              },
+              "Property": "Rating"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,68 @@
+﻿table IMDB
+	lineageTag: aea272df-4aa3-4a6a-b138-4649d34cfcbc
+
+	column Title
+		dataType: String
+		lineageTag: 66d6bdac-b3c6-4714-9366-59d31185aea3
+		summarizeBy: None
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rating
+		dataType: String
+		lineageTag: 76415096-58e9-4a94-b264-3140cf7fe584
+		summarizeBy: None
+		sourceColumn: Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column Votes
+		dataType: String
+		lineageTag: e36131fe-36fe-4d48-9b13-146db61e447a
+		summarizeBy: None
+		sourceColumn: Votes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: Int64
+		formatString = 0
+		lineageTag: d72b82f4-dba1-4980-adf8-914489199ee2
+		summarizeBy: Sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Duration
+		dataType: String
+		lineageTag: 1ef281c3-e1c9-4b67-92c3-5ddd2931a928
+		summarizeBy: None
+		sourceColumn: Duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: String
+		lineageTag: eeb219d5-a737-4e98-a457-c776a9cab876
+		summarizeBy: None
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	partition IMDB = M
+		mode: Import
+		expression =
+			let
+			    Source = Web.BrowserContents("https://www.imdb.com/chart/top/"),
+			    #"Extracted Table From Html" = Html.Table(Source, {{"Column1", ".sc-e9255ef2-3 .ipc-title__text"}, {"Column2", ".ipc-rating-star\-\-imdb"}, {"Column3", ".ipc-rating-star\-\-voteCount"}, {"Column4", ".sc-43986a27-8:nth-child(1)"}, {"Column5", ".sc-43986a27-8:nth-child(2)"}, {"Column6", ".sc-43986a27-8:nth-child(3)"}, {"Column7", ".ipc-icon\-\-star-border-inline + *"}}, [RowSelector=".ipc-metadata-list-summary-item"]),
+			    #"Changed Type" = Table.TransformColumnTypes(#"Extracted Table From Html",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", Int64.Type}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Title"}, {"Column2", "Rating"}, {"Column3", "Votes"}, {"Column4", "Year"}, {"Column5", "Duration"}, {"Column6", "Age"}}),
+			    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Age", "Duration", "Year", "Votes", "Rating", "Title"})
+			in
+			    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

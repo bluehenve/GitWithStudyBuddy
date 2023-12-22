@@ -1,0 +1,39 @@
+﻿table 'Key takeaways'
+	isHidden
+	lineageTag: ee24902d-43d5-4787-9d76-cf880fea1380
+
+	column Text
+		dataType: String
+		isHidden
+		lineageTag: a52969b1-fbf7-4be8-b31b-fdd19b907492
+		summarizeBy: None
+		sourceColumn: Text
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column http
+		dataType: String
+		isHidden
+		lineageTag: c2218ece-e077-476a-b5d3-228a6248a269
+		summarizeBy: None
+		sourceColumn: http
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Key takeaways' = M
+		mode: Import
+		expression =
+			let
+			    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("RY7NasMwEIRfpRh0q+xd2YpWhVCiH/fQQh8gyUHEojFt4mApcfP2VemhlxkY5mNmu61e4/0hh88YlnBP1WN1zPmSnppmOsdhHm+x/vqVw3RqbmNc6pAu389zTOOwltJs+hVKSwqpE4YJbEmj2l0BxKoUhulwPcVzTn/JMqxzmD9iZoLsMRSDt/eXugwxZcmiA/LENxo977xsOXXacyMNSIe9dx6Z6P+5wvSA0FrruEJpCgPECaTlThOQgnLPQ2GY0NV+/wM=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Text = _t, http = _t]),
+			    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Text", type text}, {"http", type text}})
+			in
+			    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

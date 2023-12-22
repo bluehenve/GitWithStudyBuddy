@@ -1,0 +1,224 @@
+{
+  "objects": {
+    "grid": [
+      {
+        "properties": {
+          "gridHorizontal": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "outlineColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#224F5E'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "values": [
+      {
+        "properties": {
+          "fontColorPrimary": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 7,
+                    "Percent": 0.6
+                  }
+                }
+              }
+            }
+          },
+          "backColorPrimary": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#224F5E'"
+                  }
+                }
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "17D"
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "webURL": {
+            "expr": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Key takeaways"
+                      }
+                    },
+                    "Property": "http"
+                  }
+                },
+                "Function": 3
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "dataViewWildcard": {
+                "matchingOption": 1
+              }
+            }
+          ],
+          "metadata": "Key takeaways.Text"
+        }
+      }
+    ],
+    "columnHeaders": [
+      {
+        "properties": {
+          "backColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#224F5E'"
+                  }
+                }
+              }
+            }
+          },
+          "fontColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#224F5E'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "total": [
+      {
+        "properties": {
+          "totals": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Values": [
+      0
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Text",
+        "Name": "Key takeaways.Text",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Text",
+      "queryName": "Key takeaways.Text",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Key takeaways"
+            }
+          },
+          "Property": "Text"
+        }
+      }
+    },
+    {
+      "displayName": "First http",
+      "queryName": "Min(Key takeaways.http)",
+      "roles": {},
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Key takeaways"
+                }
+              },
+              "Property": "http"
+            }
+          },
+          "Function": 3
+        }
+      },
+      "relatedObjects": {
+        "values": {
+          "webURL": [
+            {
+              "data": [
+                {
+                  "kind": 4,
+                  "_matchingOption": 1,
+                  "_key": {}
+                }
+              ],
+              "metadata": "Key takeaways.Text"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

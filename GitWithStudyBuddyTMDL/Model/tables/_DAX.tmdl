@@ -1,0 +1,21 @@
+﻿table _DAX
+	lineageTag: 3dc22f7a-ecb9-49d2-895f-c034fd23a157
+
+	column Value
+		dataType: Int64
+		isHidden
+		formatString = 0
+		lineageTag: d55cdb1c-175a-473f-a48b-1ecde239216f
+		summarizeBy: Sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _DAX = Calculated
+		mode: Import
+		expression = GENERATESERIES(1,1)
+
+	annotation PBI_Id = d03a441c42ae4e58b16c33325c70eab1
+

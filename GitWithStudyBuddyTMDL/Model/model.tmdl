@@ -1,0 +1,22 @@
+﻿model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: PowerBI_V3
+	sourceQueryCulture: da-DK
+	dataAccessOptions:
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.124.1052.0 (23.12)
+
+annotation PBI_QueryOrder = ["IMDB","Key takeaways"]
+
+ref table _DAX
+
+ref table IMDB
+
+ref table 'Key takeaways'
+
+ref culture en-US
+
